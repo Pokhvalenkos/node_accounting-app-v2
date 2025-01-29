@@ -8,7 +8,7 @@ function createServer() {
   let expenses = [];
 
   // users
-  app.get('/users', express.json(), async (req, res) => {
+  app.get('/users', async (req, res) => {
     res.statusCode = 200;
     res.send(users);
   });
@@ -86,7 +86,7 @@ function createServer() {
   });
 
   // expenses
-  app.get('/expenses', express.json(), async (req, res) => {
+  app.get('/expenses', async (req, res) => {
     const { userId, from, to, categories: category } = req.query;
     let filteredExpenses = [...expenses];
 
